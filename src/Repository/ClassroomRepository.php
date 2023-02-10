@@ -39,6 +39,18 @@ class ClassroomRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function findByName($value): array
+    {
+        return $this->createQueryBuilder('s')
+             ->andWhere('s.name = :val')
+            ->setParameter('val', $value)
+            ->orderBy('s.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 //    /**
 //     * @return Classroom[] Returns an array of Classroom objects
 //     */

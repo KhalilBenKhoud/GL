@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+ 
+
+
+ {% block body %}
+{{ parent() }}
+ 
+ {% endblock %}
+
+{% block child %}
+
+<main class="add">
+<h1>add a classroom </h1>
+{{ form_start(f, {'attr': {'class': 'row g-3 needs-validation'}}) }}
+{{ form_row(f.name,{'attr': {'class': 'form-control'}} ) }}
+{{ form_row(f.add,{'attr': {'class': 'btn btn-lg btn-primary'}} ) }}
+{{ form_end(f) }}
+
+</main>
+
+ {% endblock %}

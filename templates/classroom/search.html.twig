@@ -1,0 +1,38 @@
+ {% extends "base.html.twig" %}
+ 
+
+
+ 
+
+ {% block body %}
+{{ parent() }}
+ 
+ {% endblock %}
+{% block child %}
+
+  <main>
+<h1>classrooms</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in classroom %}
+    <tr>
+      <th scope="row">{{c.id}}</th>
+      <td>{{ c.name }}</td>
+      <td><a href="{{ path('update', {'id' : c.id}) }}">Update</a></td>
+      <td><a href="{{ path('delete', {'id' : c.id}) }}">Delete</a></td>
+    </tr>
+    </main>
+    {% endfor %}
+  </tbody>
+</table>
+<a class="btn btn-outline-success addbtn" href="{{ path('addclassroom') }}" >Add Classroom</a>
+</main>
+{% endblock %}

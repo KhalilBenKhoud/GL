@@ -19,18 +19,38 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 80vh;
+    height: 80vh;
 }
 
 .table {
     width: 60%;
-    background-color: cadetblue;
+    background-color: white;
 }
 
-.table a {
-    color : white ;
+.table tr td:nth-child(3) a {
+    color : green ;
     text-decoration: none;
 }
+.table tr td:nth-child(4) a {
+    color : red ;
+    text-decoration: none;
+}
+
 nav {
     background-color: white;
+}
+
+.update , .add {
+    background-color: rgba(25, 25, 112, 0.387);
+    width: 50% ;
+    max-height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+}
+.addbtn {
+   background-color: cadetblue;
+   color : black ;
 }
